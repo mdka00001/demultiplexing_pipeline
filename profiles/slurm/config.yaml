@@ -1,0 +1,17 @@
+executor: slurm
+jobs: 10
+latency-wait: 60
+default-resources:
+  slurm_account: "mfn3"
+  runtime: 1400
+  slurm_partition: broadwell256
+  mem_mb: 200000
+  cpus_per_task: 10
+
+set-threads:
+  cellranger_multi: 8
+
+set-resources:
+  cellranger_multi:
+    mem_mb: 200000
+    runtime: 1400

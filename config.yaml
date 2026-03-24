@@ -1,0 +1,35 @@
+# Sample sheet with sample IDs
+sample_sheet: "samples.tsv"
+
+# Path to cellranger reference
+cellranger_reference: "/home/woody/mfn3/mfn3100h/cellranger_dir/refdata-gex-GRCh38-2024-A"
+
+# Cellranger multi CSV configs for each sample
+cellranger_multi_configs:
+  sample_1: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_1_config.csv"
+  sample_2: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_2_config.csv"
+  sample_3: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_3_config.csv"
+  sample_4: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_4_config.csv"
+  sample_5: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_5_config.csv"
+  sample_6: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_6_config.csv"
+  sample_7: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_7_config.csv"
+  sample_8: "/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/sample_configs/sample_8_config.csv"
+
+# Cellranger resource allocation
+cellranger_cores: 10
+cellranger_mem: 180
+
+# Preprocessing parameters
+gex:
+  min_genes: 200
+  min_cells: 3
+  max_genes: 6000
+  max_counts: 20000
+
+hto:
+  min_cells: 10
+
+vdj:
+  productive_only: true
+
+description: "SLE_SSc_DM_GEX_VDJ_LN_260316"

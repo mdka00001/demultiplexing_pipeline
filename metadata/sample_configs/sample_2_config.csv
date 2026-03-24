@@ -1,0 +1,22 @@
+[gene-expression]
+reference,/home/woody/mfn3/mfn3100h/cellranger_dir/refdata-gex-GRCh38-2024-A
+create-bam,true
+
+[feature]
+reference,/home/woody/mfn3/mfn3100h/SLE_SSc_raw_data_preprocessing_160326/metadata/feature_reference.csv
+
+[vdj]
+reference,/home/woody/mfn3/mfn3100h/cellranger_dir/refdata-cellranger-vdj-GRCh38-alts-ensembl-7.1.0
+
+[libraries]
+fastq_id,fastqs,feature_types
+GEX_G2-SCI7T002-SCI5T002_22CHNCLT4,/home/woody/mfn3/mfn3100h/shared_folder/raw_data/sample_2/gex,Gene Expression
+VDJ_B2-SCI7T018-SCI5T018_22CHNCLT4,/home/woody/mfn3/mfn3100h/shared_folder/raw_data/sample_2/vdj_b,VDJ-B
+VDJ_T2-SCI7T010-SCI5T010_22CHNCLT4,/home/woody/mfn3/mfn3100h/shared_folder/raw_data/sample_2/vdj_t,VDJ-T
+TCR_H2-AK32135-AK32136_22CHNCLT4,/home/woody/mfn3/mfn3100h/shared_folder/raw_data/sample_2/hto,Antibody Capture
+
+[samples]
+sample_id,description,hashtag_ids
+SSc_1,post,C1
+SSc_3,post,C2
+SSc_4,post,C3

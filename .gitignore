@@ -1,0 +1,38 @@
+# Cellranger outputs
+cellranger_outputs_2/
+
+# Pipeline results
+results/
+
+# Logs and error files
+logs/
+error_logs/
+*.log
+*.out
+*.err
+
+# Snakemake cache and temporary files
+.snakemake/
+.local_bin/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.env
