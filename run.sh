@@ -8,6 +8,10 @@
 #SBATCH --error=logs/slurm-%j.err
 #SBATCH --partition=work
 
+# Exit on any error and ensure job terminates
+set -e
+trap "exit" INT TERM
+
 # --- 1. Environment Setup ---
 export PATH=$PATH:/home/woody/mfn3/mfn3100h/cellranger_dir/cellranger-10.0.0/bin
 
@@ -54,8 +58,12 @@ rm -rf .local_bin
 
 if [ $PIPELINE_EXIT_CODE -eq 0 ]; then
   echo "$(date): Pipeline success" >> logs/pipeline_status.log
+  echo "$(date): Job completed successfully. Terminating SLURM job." >> logs/pipeline_status.log
 else
   echo "$(date): Pipeline failed (Exit: $PIPELINE_EXIT_CODE)" >> error_logs/pipeline_errors.log
+  echo "$(date): Job failed. Terminating SLURM job." >> error_logs/pipeline_errors.log
 fi
 
+# Terminate the SLURM job immediately after pipeline completes
+# This prevents the node from staying allocated after work is done
 exit $PIPELINE_EXIT_CODE

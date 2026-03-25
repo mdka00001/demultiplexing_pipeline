@@ -8,11 +8,13 @@ rule gmmdemux:
         cell_counts="results/total_cells_per_sample.csv"
     output:
         directory("results/gmm_demux_output/{sample}"),
+        simplified="results/gmm_demux_output/{sample}/GMM_simplified.csv",
         done="results/gmm_demux_output/{sample}/finished.log"
     params:
         sample_id="{sample}",
         output_dir=lambda w: os.path.abspath(f"results/gmm_demux_output/{w.sample}"),
         hashtags=config.get("gmmdemux_hashtags", "Hash-tag1,Hash-tag2,Hash-tag3"),
+        threshold = 0.7
     shell:
         """
         set -e
@@ -28,7 +30,8 @@ rule gmmdemux:
             {input.matrix} \
             {params.hashtags} \
             --output "{params.output_dir}" \
-            --simplified "{params.output_dir}"
+            --simplified "{params.output_dir}" \
+            --t {params.threshold}
 
         touch {output.done}
         """
